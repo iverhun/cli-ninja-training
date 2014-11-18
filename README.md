@@ -1,0 +1,2 @@
+cli-ninja-training
+==================
