@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+function runSolr() {
+
+cd $PRR_HOME/clean/solr/web-local
+mvn verify
+
+}
+
+runSolr

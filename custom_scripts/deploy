@@ -1,0 +1,70 @@
+#!/bin/bash
+
+usage() {
+
+cat <<USAGE
+Usage: patchprr "[[-]r | m | f | p | pr]"
+________________________________________
+Currently deployed applications:
+USAGE
+ls -1 $DEPLOY_DIR | grep "bv*\|portal*\|feeds*\|tool*\|ROOT*"
+exit 1
+
+}
+
+DEPLOY_DIR="$CATALINA_HOME/conf/Catalina/localhost"
+DESCRIPTORS_HOME_DIR="$DEPLOY_DIR/XmlDeploymentDescriptors"
+
+    if [ "x$1" == "x-r" ]
+    then
+        rm $DEPLOY_DIR/ROOT.xml
+        exit 0
+    fi
+    if [ "x$1" == "x-m" ]
+    then
+        rm $DEPLOY_DIR/bvmanager.xml
+        exit 0
+    fi
+    if [ "x$1" == "x-p" ]
+    then
+        rm $DEPLOY_DIR/portal.xml
+        exit 0
+    fi
+    if [ "x$1" == "x-pr" ]
+    then
+        rm $DEPLOY_DIR/portal-server-reporting.xml
+        exit 0
+    fi
+    if [ "x$1" == "x-f" ]
+    then
+        rm $DEPLOY_DIR/feeds.xml
+        exit 0
+    fi
+
+    if [ "x$1" == "xr" ]
+    then
+        cp $DESCRIPTORS_HOME_DIR/ROOT.xml $DEPLOY_DIR
+        exit 0
+    fi
+    if [ "x$1" == "xm" ]
+    then
+        cp $DESCRIPTORS_HOME_DIR/bvmanager.xml $DEPLOY_DIR
+        exit 0
+    fi
+    if [ "x$1" == "xp" ]
+    then
+        cp $DESCRIPTORS_HOME_DIR/portal.xml $DEPLOY_DIR
+        exit 0
+    fi
+    if [ "x$1" == "xpr" ]
+    then
+        cp $DESCRIPTORS_HOME_DIR/portal-server-reporting.xml $DEPLOY_DIR
+        exit 0
+    fi
+    if [ "x$1" == "xf" ]
+    then
+        cp $DESCRIPTORS_HOME_DIR/feeds.xml $DEPLOY_DIR
+        exit 0
+    fi
+
+usage
