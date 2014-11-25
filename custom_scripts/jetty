@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+function runJetty() {
+
+cd $PRR_HOME/clean/quality/webrunner/
+mvn verify -P run-webrunner-nofork
+
+}
+
+runJetty

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ant | tee /home/iverh/test.log | egrep "PASSED|FAILED|SKIPPED|ERROR"
+
+kdialog --msgbox 'tests finished'
