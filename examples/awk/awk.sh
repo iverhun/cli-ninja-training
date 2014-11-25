@@ -20,7 +20,7 @@ awk 'NF > 0' yesterday-lyrics.txt
 #===============
 # Advanced
 # replace delimiter with tab
- awk -F "[ :]+" '{OFS="\t"; $2=$2; print $0}' ../../logs/smb-dataimport.log
- 
+awk -F "[ :]+" '{OFS="\t"; $2=$2; print $0}' ../../logs/smb-dataimport.log
+
 # print 7 random numbers between 0 and 100
 awk 'BEGIN { for (i = 1; i <= 7; i++) print int(101 * rand()) }'
