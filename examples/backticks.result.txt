@@ -1,0 +1,19 @@
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk '{print $2, $4}'
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk '{print length()}'
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk '{print length($0)}'
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk '{print length($4)": "$4}'
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk 'length($4) > 17 {print length($4)": "$4}'
+./awk/awk.sh:cat ../../logs/smb-dataimport.log | awk '/'Config'/ {print length($4)": "$4}'
+./backticks/backticks.sh:cat ./run_java.sh | grep java | awk -F ">" '{print $1}'
+./backticks/backticks.sh:`cat ./run_java.sh | grep java | awk -F ">" '{print $1}'`
+./history/history.sh:# execute previous command, but replace cat with vim 
+./history/history.sh:cat yesterday-lyrics.txt
+./history/history.sh:!!:s/cat/vim
+./history/history.sh:cat yesterday-lyrics.txt
+./history/history.sh:^cat^vim
+./pipes/pipes.sh:cat tomorrow-lyrics.txt | grep love
+./pipes/pipes.sh:cat tomorrow-lyrics.txt | grep love | tee filtered.txt
+./pipes/pipes.sh:cat -b tomorrow-lyrics.txt | grep -e '0\s'
+./xargs/xargs.sh:ls | xargs cat
+./xargs/xargs.sh:# find all usages of 'cat' command in *.sh files in examples directory
+./xargs/xargs.sh:find . -name "*.sh" | xargs grep 'cat'
