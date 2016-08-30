@@ -11,7 +11,7 @@ cat yesterday-lyrics.txt
 ^cat^vim
 
 # better example
-grep ERROR ../../logs/smb-dataimport.log.2013*
+grep ERROR test.log.2015
 ^13^14
 
 # the same, but arbitrary command from history
