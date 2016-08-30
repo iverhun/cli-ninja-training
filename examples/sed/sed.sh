@@ -12,7 +12,7 @@ sed -i.bak 's/qwerty123/PASSWORD/g' awslog.sh
 # remove empty lines
 sed -e '/^\s*$/d' yesterday-lyrics.txt
 
-# multiple commands in a line (verify woth grep): 
+# multiple commands in a line (verify with grep): 
 ## replace 'yesterday' with 'tomorrow'
 ## delete lines with 'love'
 sed 's/yesterday/tomorrow/g; /love/d' yesterday-lyrics.txt

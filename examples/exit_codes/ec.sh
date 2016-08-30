@@ -1,6 +1,6 @@
 
 # show exit code
-curl abc://example.com; echo $?
+curl abc://example.com 2> /dev/null; echo $?
 asdasdga; echo $?
 
 # command chaining and grouping
