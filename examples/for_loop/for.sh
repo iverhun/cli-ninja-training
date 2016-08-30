@@ -1,5 +1,5 @@
 
-# ll forevery directory 
+# ll for every directory 
 for i in *; do ll $i; done
 
 # execute sql query on every jenkins slave db (dummy, not working example):
