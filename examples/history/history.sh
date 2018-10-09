@@ -4,15 +4,19 @@
 
 # execute previous command, but replace cat with vim 
 cat yesterday-lyrics.txt
-!!:s/cat/vim
+less !*
+
+# 
+tail test.log.2015
+!!:s/15/16
 
 # the same
-cat yesterday-lyrics.txt
-^cat^vim
+tail test.log.2015
+^5^6
 
 # better example
 grep ERROR test.log.2015
-^13^14
+^15^16
 
 # the same, but arbitrary command from history
 !592:s/ERROR/WARN
